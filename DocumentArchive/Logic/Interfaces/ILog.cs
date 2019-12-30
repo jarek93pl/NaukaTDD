@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace DocumentArchive.Logic.Interfaces
 {
-    interface ILog
+    public interface ILog
     {
+        void CatchError(Exception ex, object request);
     }
 }
