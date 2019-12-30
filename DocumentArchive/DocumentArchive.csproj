@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Logic\Implementation\Action\" />
     <Folder Include="Logic\Implementation\DB\" />
   </ItemGroup>
 
