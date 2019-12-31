@@ -1,4 +1,5 @@
 ﻿using System;
+using DocumentArchive.Logic.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
