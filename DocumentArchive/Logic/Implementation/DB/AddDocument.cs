@@ -18,7 +18,12 @@ namespace DocumentArchive.Logic.Implementation.DB
 
         public Document Action(Document document)
         {
-            throw new NotImplementedException();
+            using (context)
+            {
+                context.Document.Add(document);
+                context.SaveChanges();
+                return document;
+            }
         }
     }
 }

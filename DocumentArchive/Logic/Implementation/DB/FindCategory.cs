@@ -1,5 +1,6 @@
 ﻿using DocumentArchive.Logic.Interfaces.DB;
 using DocumentArchive.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,17 @@ namespace DocumentArchive.Logic.Implementation.DB
         }
         public List<Category> Action(string prefix)
         {
-            throw new NotImplementedException();
+            using (context)
+            {
+                if (prefix == null)
+                {
+                    return context.Category.ToList();
+                }
+                else
+                {
+                    return context.Category.Where(x => EF.Functions.Like(x.Name, $"{prefix}%")).ToList();
+                }
+            }
         }
     }
 }

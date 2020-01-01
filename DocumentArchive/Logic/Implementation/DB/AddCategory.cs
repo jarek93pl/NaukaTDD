@@ -9,14 +9,19 @@ namespace DocumentArchive.Logic.Implementation.DB
 {
     public class AddCategory : IAddCategory
     {
-        public DocumentContext context { get; set; }
+        public DocumentContext Context { get; set; }
         public AddCategory(DocumentContext context)
         {
-            this.context = context;
+            this.Context = context;
         }
         Category IAddCategory.Action(Category category)
         {
-            throw new NotImplementedException();
+            using (Context)
+            {
+                Context.Category.Add(category);
+                Context.SaveChanges();
+                return category;
+            }
         }
     }
 }

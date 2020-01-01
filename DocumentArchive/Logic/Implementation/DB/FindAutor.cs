@@ -1,5 +1,6 @@
 ﻿using DocumentArchive.Logic.Interfaces.DB;
 using DocumentArchive.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,17 @@ namespace DocumentArchive.Logic.Implementation.DB
 
         public List<Autor> Action(string prefix)
         {
-            throw new NotImplementedException();
+            using (context)
+            {
+                if (prefix == null)
+                {
+                    return context.Autor.ToList();
+                }
+                else
+                {
+                    return context.Autor.Where(x => EF.Functions.Like(x.FirstName, $"{prefix}%")).ToList();
+                }
+            }
         }
     }
 }

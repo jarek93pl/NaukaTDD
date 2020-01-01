@@ -9,14 +9,19 @@ namespace DocumentArchive.Logic.Implementation.DB
 {
     public class AddAutor : IAddAutor
     {
-        public DocumentContext context { get; set; }
+        public DocumentContext Context { get; set; }
         public AddAutor(DocumentContext context)
         {
-            this.context = context;
+            this.Context = context;
         }
         Autor IAddAutor.Action(Autor autor)
         {
-            throw new NotImplementedException();
+            using (Context)
+            {
+                Context.Add(autor);
+                Context.SaveChanges();
+                return autor;
+            }
         }
     }
 }

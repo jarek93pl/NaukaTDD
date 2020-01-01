@@ -16,7 +16,17 @@ namespace DocumentArchive.Logic.Implementation.DB
         }
         public List<Document> Action(DocumentFilter documentFilter)
         {
-            throw new NotImplementedException();
+            using (context)
+            {
+                if (documentFilter == null)
+                {
+                    return context.Document.ToList();
+                }
+                else
+                {
+                    return documentFilter.Use(context.Document).ToList();
+                }
+            }
         }
     }
 }

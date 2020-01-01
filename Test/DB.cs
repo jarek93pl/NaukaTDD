@@ -29,7 +29,7 @@ namespace Test
 
             var result = addAutor.Action(autor);
 
-            Assert.IsTrue(mock.Object.Autor.Any(X => X.FirstName == autor.FirstName && X.LastName == autor.LastName));
+            mock.Verify(x => x.Add(It.Is<Autor>(y => y.FirstName == autor.FirstName && y.LastName == autor.LastName)));
             mock.Verify(X => X.SaveChanges());
 
         }
@@ -49,7 +49,7 @@ namespace Test
 
             var result = addCategory.Action(Category);
 
-            Assert.IsTrue(mock.Object.Category.Any(X => X.Name == Category.Name));
+            mock.Verify(x => x.Category.Add(It.Is<Category>(y => y.Name == Category.Name)));
             mock.Verify(X => X.SaveChanges());
 
         }
@@ -71,7 +71,7 @@ namespace Test
 
             var result = addDocument.Action(Document);
 
-            Assert.IsTrue(mock.Object.Document.Any(X => X.Name == Document.Name));
+            mock.Verify(x => x.Document.Add(It.Is<Document>(y => y.Name == Document.Name)));
             mock.Verify(X => X.SaveChanges());
         }
         [TestMethod]
