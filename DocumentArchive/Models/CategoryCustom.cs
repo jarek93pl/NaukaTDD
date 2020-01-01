@@ -17,7 +17,7 @@ namespace DocumentArchive.Models
 
         public override bool Equals(object obj)
         {
-            if (obj is Autor a)
+            if (obj is Category a)
             {
                 return a.Id == Id;
             }

@@ -18,7 +18,15 @@ namespace DocumentArchive.Logic.Implementation.Action
         }
         public Category Action(Category category)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return connection.Action(category);
+            }
+            catch (Exception ex)
+            {
+                log.CatchError(ex, category);
+                return null;
+            }
         }
     }
 }

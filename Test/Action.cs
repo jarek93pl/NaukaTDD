@@ -89,7 +89,6 @@ namespace Test
             mockLog.Verify(X => X.CatchError(It.IsAny<Exception>(), It.IsAny<object>()));
             DbCategory.Verify(X => X.Action(It.IsAny<Category>()));
             Assert.IsTrue(result == null);
-            Assert.IsFalse(result.Id == 0);
         }
         [TestMethod]
         public void AddDocumentCorrect()

@@ -18,7 +18,15 @@ namespace DocumentArchive.Logic.Implementation.Action
         }
         public List<Category> Action(string prefix)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return connection.Action(prefix);
+            }
+            catch (Exception ex)
+            {
+                log.CatchError(ex, prefix);
+                return null;
+            }
         }
     }
 }

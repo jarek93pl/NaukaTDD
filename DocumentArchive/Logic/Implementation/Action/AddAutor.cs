@@ -18,7 +18,15 @@ namespace DocumentArchive.Logic.Implementation.Action
         }
         Autor IAddAutor.Action(Autor autor)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return connection.Action(autor);
+            }
+            catch (Exception ex)
+            {
+                log.CatchError(ex, autor);
+                return null;
+            }
         }
     }
 }

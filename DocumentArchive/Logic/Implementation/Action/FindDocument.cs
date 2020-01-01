@@ -18,7 +18,15 @@ namespace DocumentArchive.Logic.Implementation.Action
         }
         public List<Document> Action(DocumentFilter documentFilter)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return connection.Action(documentFilter);
+            }
+            catch (Exception ex)
+            {
+                log.CatchError(ex, documentFilter);
+                return null;
+            }
         }
     }
 }

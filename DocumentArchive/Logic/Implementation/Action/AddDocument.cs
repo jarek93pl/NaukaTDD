@@ -16,9 +16,17 @@ namespace DocumentArchive.Logic.Implementation.Action
             connection = db;
             this.log = log;
         }
-        public Document Action(Document document)
+        public Document Action(Document Document)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return connection.Action(Document);
+            }
+            catch (Exception ex)
+            {
+                log.CatchError(ex, Document);
+                return null;
+            }
         }
     }
 }
