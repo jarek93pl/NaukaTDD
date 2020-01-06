@@ -1,5 +1,6 @@
 ﻿using DocumentArchive.Logic.Interfaces.Action;
 using DocumentArchive.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace DocumentArchive.Logic.Implementation.Action
             connection = db;
             this.log = log;
         }
+        [HttpPost]
         Autor IAddAutor.Action(Autor autor)
         {
             try

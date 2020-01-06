@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using DocumentArchive.Logic.Implementation;
+using DocumentArchive.Logic.Interfaces;
 //using DocumentArchive.Logic.Implementation;
 //using DocumentArchive.Logic.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +14,11 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IMAC = DocumentArchive.Logic.Implementation.Action;
+using IMDB = DocumentArchive.Logic.Implementation.DB;
+using IAC = DocumentArchive.Logic.Interfaces.Action;
+using IDB = DocumentArchive.Logic.Interfaces.DB;
+using DocumentArchive.Models;
 
 namespace DocumentArchive
 {
@@ -42,6 +49,9 @@ namespace DocumentArchive
         }
         public void ConfigureContainer(ContainerBuilder builder)
         {
+
+            builder.RegisterType<DocumentContext>();
+            builder.RegisterAssemblyTypes(typeof(Startup).Assembly).Where(X => X.Namespace.Contains("DocumentArchive.Logic.Implementation")).AsImplementedInterfaces();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

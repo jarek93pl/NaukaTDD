@@ -25,7 +25,7 @@ namespace DocumentArchive.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-NO39NB8;Initial Catalog=Document;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=10.0.75.1;Initial Catalog=Document;Persist Security Info=True;User ID=sa2;Password=jarek1993");
             }
         }
 
