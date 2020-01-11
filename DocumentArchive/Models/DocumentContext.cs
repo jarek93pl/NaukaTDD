@@ -2,6 +2,7 @@
 using DocumentArchive.Logic.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using DocumentArchive.Filter;
 
 namespace DocumentArchive.Models
 {
@@ -93,5 +94,7 @@ namespace DocumentArchive.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<DocumentArchive.Filter.DocumentFilter> DocumentFilter { get; set; }
     }
 }

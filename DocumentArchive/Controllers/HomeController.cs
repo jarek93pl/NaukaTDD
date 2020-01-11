@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
+using DocumentArchive.Filter;
 using DocumentArchive.Logic.Implementation.Action;
 using DocumentArchive.Logic.Interfaces.Action;
 using DocumentArchive.Models;
@@ -42,8 +43,18 @@ namespace DocumentArchive.Controllers
             this.addDocument = addDocument;
             this.findDocument = findDocument;
         }
-
+        [HttpGet]
         public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult DocumentsList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult DocumentFilter()
         {
             return View();
         }
@@ -57,7 +68,10 @@ namespace DocumentArchive.Controllers
         {
             return Json(findAutor.Action(prefix));
         }
-
+        public ActionResult Filter()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult AddCategory([FromBody]  Category category)

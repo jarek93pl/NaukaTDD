@@ -1,4 +1,5 @@
-﻿using DocumentArchive.Models;
+﻿using DocumentArchive.Filter;
+using DocumentArchive.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

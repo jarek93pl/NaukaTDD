@@ -1,4 +1,5 @@
-﻿using DocumentArchive.Logic.Interfaces.Action;
+﻿using DocumentArchive.Filter;
+using DocumentArchive.Logic.Interfaces.Action;
 using DocumentArchive.Models;
 using System;
 using System.Collections.Generic;

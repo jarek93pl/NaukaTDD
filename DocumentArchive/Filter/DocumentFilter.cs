@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentArchive.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DocumentArchive.Models
+namespace DocumentArchive.Filter
 {
     public class DocumentFilter
     {
+        [Key]
         public int? CategoryId { get; set; }
         public int? AutorId { get; set; }
         public DateTime BeginCreateDate { get; set; }

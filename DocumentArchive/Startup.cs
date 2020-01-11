@@ -19,6 +19,8 @@ using IMDB = DocumentArchive.Logic.Implementation.DB;
 using IAC = DocumentArchive.Logic.Interfaces.Action;
 using IDB = DocumentArchive.Logic.Interfaces.DB;
 using DocumentArchive.Models;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace DocumentArchive
 {
@@ -70,7 +72,12 @@ namespace DocumentArchive
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "Scripts")),
+                RequestPath = "/Scripts"
+            });
             app.UseRouting();
 
             app.UseAuthorization();

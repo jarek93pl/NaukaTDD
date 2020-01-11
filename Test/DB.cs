@@ -8,6 +8,8 @@ using Moq;
 using DocumentArchive.Models;
 using Moq.EntityFrameworkCore;
 using System.Linq;
+using DocumentArchive.Filter;
+
 namespace Test
 {
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]

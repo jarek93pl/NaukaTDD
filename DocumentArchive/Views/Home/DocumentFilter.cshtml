@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DocumentFilter">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CategoryId" />
+            <div class="form-group">
+                <label asp-for="AutorId" class="control-label"></label>
+                <input asp-for="AutorId" class="form-control" />
+                <span asp-validation-for="AutorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeginCreateDate" class="control-label"></label>
+                <input asp-for="BeginCreateDate" class="form-control" />
+                <span asp-validation-for="BeginCreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndCreateDate" class="control-label"></label>
+                <input asp-for="EndCreateDate" class="form-control" />
+                <span asp-validation-for="EndCreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prefix" class="control-label"></label>
+                <input asp-for="Prefix" class="form-control" />
+                <span asp-validation-for="Prefix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
