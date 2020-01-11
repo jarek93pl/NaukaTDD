@@ -25,3 +25,17 @@ $('#AutorId').bind('input',
             });
     });
 
+$('#CategoryId').bind('input',
+    function () {
+        PostActionByString("/Home/FindCategory", $('#CategoryIdbrowsers').val()
+            , function (data) {
+                var optionsHtml = '';
+                for (var i of data) {
+                    var name = i.id + ')' + (i.name === undefined ? "" : i.name);
+                    optionsHtml += '<option data-id"' + i.id + '" value="' + name + '"/>';
+                }
+                $('#CategoryIdbrowsers').html(optionsHtml);
+            });
+    });
+
+

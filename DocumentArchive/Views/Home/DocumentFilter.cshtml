@@ -4,17 +4,23 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="AutorId" class="control-label">Autor dokumentu</label>
-                <input asp-for="AutorId"  id="AutorId" list="AutorIdbrowsers" type="search" class="form-control" />
+                <input asp-for="AutorId" id="AutorId" list="AutorIdbrowsers" type="search" class="form-control" />
                 <datalist id="AutorIdbrowsers">
                 </datalist>
             </div>
             <div class="form-group">
+                <label asp-for="Category" class="control-label">Kategoria dokumentu</label>
+                <input asp-for="CategoryId" id="CategoryId" list="CategoryIdbrowsers" type="search" class="form-control" />
+                <datalist id="CategoryIdbrowsers">
+                </datalist>
+            </div>
+            <div class="form-group">
                 <label asp-for="BeginCreateDate" class="control-label">Data od</label>
-                <input asp-for="BeginCreateDate" class="form-control" />
+                <input asp-for="BeginCreateDate" type="date" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="EndCreateDate" class="control-label">Data do</label>
-                <input asp-for="EndCreateDate" class="form-control" />
+                <input asp-for="EndCreateDate" type="date" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Prefix" class="control-label">Nazwa dokumentu</label>
