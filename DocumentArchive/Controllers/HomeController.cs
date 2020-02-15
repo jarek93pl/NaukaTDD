@@ -27,7 +27,7 @@ namespace DocumentArchive.Controllers
         readonly Logic.Interfaces.Action.IAddDocument addDocument;
         readonly Logic.Interfaces.Action.IFindDocument findDocument;
         public HomeController
-            (Logic.Interfaces.Action.IAddAutor addAutor, 
+            (Logic.Interfaces.Action.IAddAutor addAutor,
             Logic.Interfaces.Action.IFindAutor findAutor,
             Logic.Interfaces.Action.IFindCategory findCategory,
             Logic.Interfaces.Action.IAddCategory addCategory,
@@ -90,9 +90,10 @@ namespace DocumentArchive.Controllers
             return Json(addDocument.Action(document));
         }
         [HttpPost]
-        public ActionResult FindDocument([FromBody]  DocumentFilter filter)
+        public ActionResult FindDocument([FromBody]   DocumentFilter filter)
         {
-            return Json(findDocument.Action(filter));
+            var result = findDocument.Action(filter);
+            return Json(result);
         }
     }
 }

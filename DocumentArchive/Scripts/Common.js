@@ -24,7 +24,7 @@ function PostActionByString(url, data, completed) {
         url: url,
         type: "POST",
         cache: false,
-        data: data,
+        data:  data ,
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             if (data === "") {

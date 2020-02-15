@@ -1,6 +1,7 @@
 ﻿using DocumentArchive.Filter;
 using DocumentArchive.Logic.Interfaces.DB;
 using DocumentArchive.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,11 @@ namespace DocumentArchive.Logic.Implementation.DB
             {
                 if (documentFilter == null)
                 {
-                    return context.Document.ToList();
+                    return context.Document.Include(x => x.OwnerNavigation).Include(x => x.CategoryNavigation).ToList();
                 }
                 else
                 {
-                   return documentFilter.Use(context.Document).ToList();
+                    return documentFilter.Use(context.Document).ToList();
                 }
             }
         }

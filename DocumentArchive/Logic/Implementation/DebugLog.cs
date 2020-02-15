@@ -10,6 +10,7 @@ namespace DocumentArchive.Logic.Implementation
     {
         public void CatchError(Exception ex, object request)
         {
+            System.Diagnostics.Debug.WriteLine(ex.Message);
         }
     }
 }

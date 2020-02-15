@@ -13,21 +13,20 @@
                 <input asp-for="CategoryId" id="CategoryId" list="CategoryIdbrowsers" type="search" class="form-control" />
                 <datalist id="CategoryIdbrowsers">
                 </datalist>
-            </div>
             <div class="form-group">
                 <label asp-for="BeginCreateDate" class="control-label">Data od</label>
-                <input asp-for="BeginCreateDate" type="date" class="form-control" />
+                <input asp-for="BeginCreateDate" id="BeginCreateDate" type="date" class="form-control" value="@DateTime.Now.AddDays(-90).ToString("yyyy-MM-dd")" />
             </div>
             <div class="form-group">
                 <label asp-for="EndCreateDate" class="control-label">Data do</label>
-                <input asp-for="EndCreateDate" type="date" class="form-control" />
+                <input asp-for="EndCreateDate" id="EndCreateDate" type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
             </div>
             <div class="form-group">
                 <label asp-for="Prefix" class="control-label">Nazwa dokumentu</label>
-                <input asp-for="Prefix" class="form-control" />
+                <input asp-for="Prefix" id="Prefix" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Szukaj" class="btn btn-primary" />
+                <input type="submit" value="Szukaj" class="btn btn-primary Shearch" />
             </div>
         </form>
     </div>

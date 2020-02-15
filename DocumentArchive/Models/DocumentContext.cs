@@ -95,6 +95,5 @@ namespace DocumentArchive.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<DocumentArchive.Filter.DocumentFilter> DocumentFilter { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace DocumentArchive.Models
             autor.Id = id;
             return autor;
         }
+        public string Name { get => $"{FirstName} {LastName}"; }
         public override bool Equals(object obj)
         {
             if (obj is Autor a)
