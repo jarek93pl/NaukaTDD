@@ -19,6 +19,14 @@
             </div>
         </nav>
     </header>
+    <div style="position:absolute">
+        <div style="position:relative; left:50%;right:50%;z-index:5;background-color:whitesmoke;border-color:cornflowerblue;border-style:solid;">
+            <div id="AllertApp" style="position:center">
+
+            </div>
+        </div>
+    </div>
+
     <div id="container">
         DocumentFilter
         @Html.Partial("DocumentFilter")
@@ -35,5 +43,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="~/Scripts/Common.js"></script>
     <script type="text/javascript" src="~/Scripts/Index.js"></script>
+    <script type="text/javascript" src="~/Scripts/DocumentFilter.js"></script>
 </body>
 </html>

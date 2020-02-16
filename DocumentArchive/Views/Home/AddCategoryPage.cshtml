@@ -1,0 +1,14 @@
+﻿@model DocumentArchive.Models.Category
+
+@{
+    Layout = null;
+}
+
+
+<div class="form-group AddCategoryPage">
+    <label asp-for="Name" class="control-label">Nazwa nowej kategorii.</label>
+    <input asp-for="Name" class="form-control" />
+</div>
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-primary"  id="AddCategorybtn"/>
+</div>

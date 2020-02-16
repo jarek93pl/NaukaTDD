@@ -95,5 +95,9 @@ namespace DocumentArchive.Controllers
             var result = findDocument.Action(filter);
             return Json(result);
         }
+        public ActionResult AddCategoryPage()
+        {
+            return View();
+        }
     }
 }

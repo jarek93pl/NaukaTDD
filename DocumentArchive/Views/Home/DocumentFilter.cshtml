@@ -9,10 +9,12 @@
                 </datalist>
             </div>
             <div class="form-group">
-                <label asp-for="Category" class="control-label">Kategoria dokumentu</label>
-                <input asp-for="CategoryId" id="CategoryId" list="CategoryIdbrowsers" type="search" class="form-control" />
-                <datalist id="CategoryIdbrowsers">
-                </datalist>
+                    <label asp-for="Category" class="control-label">Kategoria dokumentu</label>
+                    <input asp-for="CategoryId" id="CategoryId" list="CategoryIdbrowsers" type="search" class="form-control" />
+                    <datalist id="CategoryIdbrowsers">
+                    </datalist>
+                    <button id="ShowCategoryAlert">Dodaj kategorie</button>
+            </div>
             <div class="form-group">
                 <label asp-for="BeginCreateDate" class="control-label">Data od</label>
                 <input asp-for="BeginCreateDate" id="BeginCreateDate" type="date" class="form-control" value="@DateTime.Now.AddDays(-90).ToString("yyyy-MM-dd")" />
