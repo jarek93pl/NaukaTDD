@@ -99,5 +99,9 @@ namespace DocumentArchive.Controllers
         {
             return View();
         }
+        public ActionResult AddAutorPage()
+        {
+            return View();
+        }
     }
 }
